@@ -1,0 +1,22 @@
+ticker,as_of_date,market_cap,enterprise_value,pe_ttm,pe_forward,ev_ebitda,price,dividend_yield,source,source_url
+AAPL,2024-12-31,3520000000000,3596000000000,37.5,31.8,27.5,232.50,0.43,Yahoo Finance,https://finance.yahoo.com/quote/AAPL
+MSFT,2024-12-31,3180000000000,3213000000000,36.1,30.2,24.8,428.00,0.78,Yahoo Finance,https://finance.yahoo.com/quote/MSFT
+NVDA,2024-12-31,3320000000000,3323000000000,48.2,32.5,38.6,135.20,0.03,Yahoo Finance,https://finance.yahoo.com/quote/NVDA
+GOOG,2024-12-31,2340000000000,2341000000000,23.3,20.1,18.8,190.50,0.42,Yahoo Finance,https://finance.yahoo.com/quote/GOOG
+CRM,2024-12-31,315000000000,318700000000,54.2,28.5,26.5,330.00,0.48,Yahoo Finance,https://finance.yahoo.com/quote/CRM
+ADBE,2024-12-31,228000000000,226500000000,41.0,25.6,27.2,512.00,0.00,Yahoo Finance,https://finance.yahoo.com/quote/ADBE
+INTC,2024-12-31,92000000000,136800000000,0.0,24.0,18.5,21.50,2.32,Yahoo Finance,https://finance.yahoo.com/quote/INTC
+WMT,2024-12-31,725000000000,776500000000,46.7,33.2,21.5,90.50,0.92,Yahoo Finance,https://finance.yahoo.com/quote/WMT
+AMZN,2024-12-31,2280000000000,2250000000000,38.5,31.4,18.6,218.00,0.00,Yahoo Finance,https://finance.yahoo.com/quote/AMZN
+TGT,2024-12-31,62000000000,74200000000,15.0,13.8,8.6,134.00,3.34,Yahoo Finance,https://finance.yahoo.com/quote/TGT
+COST,2024-12-31,418000000000,414000000000,56.7,49.2,37.5,942.00,0.51,Yahoo Finance,https://finance.yahoo.com/quote/COST
+HD,2024-12-31,398000000000,438400000000,26.3,24.1,18.3,401.00,2.24,Yahoo Finance,https://finance.yahoo.com/quote/HD
+LOW,2024-12-31,148000000000,182600000000,19.1,20.8,13.8,258.00,1.78,Yahoo Finance,https://finance.yahoo.com/quote/LOW
+DG,2024-12-31,16500000000,32900000000,9.9,12.8,10.4,75.00,3.15,Yahoo Finance,https://finance.yahoo.com/quote/DG
+UPS,2024-12-31,112000000000,131800000000,18.8,15.2,11.2,131.00,4.98,Yahoo Finance,https://finance.yahoo.com/quote/UPS
+FDX,2024-12-31,67000000000,94850000000,15.5,13.8,9.3,275.00,1.96,Yahoo Finance,https://finance.yahoo.com/quote/FDX
+EXPD,2024-12-31,17200000000,15550000000,24.1,21.5,15.2,120.00,1.22,Yahoo Finance,https://finance.yahoo.com/quote/EXPD
+CHRW,2024-12-31,12800000000,14360000000,29.1,23.4,19.4,108.00,2.26,Yahoo Finance,https://finance.yahoo.com/quote/CHRW
+XPO,2024-12-31,14200000000,16850000000,45.1,25.8,14.3,122.00,0.00,Yahoo Finance,https://finance.yahoo.com/quote/XPO
+GXO,2024-12-31,5800000000,8840000000,22.3,16.5,10.9,49.50,0.00,Yahoo Finance,https://finance.yahoo.com/quote/GXO
+JBHT,2024-12-31,17500000000,18942000000,31.2,25.1,13.1,172.00,1.00,Yahoo Finance,https://finance.yahoo.com/quote/JBHT

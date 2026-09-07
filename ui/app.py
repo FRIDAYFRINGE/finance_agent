@@ -5,6 +5,7 @@ from agent.core import FinancialAgent
 from agent.response import AgentResponse
 from ui.async_runner import get_async_worker
 from ui.components import (
+    escape_dollar_signs,
     get_sample_prompts_for_config,
     render_disclaimer,
     render_metadata_bar,
@@ -129,11 +130,11 @@ st.markdown(
 for msg in st.session_state.messages:
     if msg["role"] == "user":
         with st.chat_message("user"):
-            st.markdown(msg["content"])
+            st.markdown(escape_dollar_signs(msg["content"]))
     elif msg["role"] == "assistant":
         resp: AgentResponse = msg["response"]
         with st.chat_message("assistant"):
-            st.markdown(resp.answer)
+            st.markdown(escape_dollar_signs(resp.answer))
             st.divider()
             render_metadata_bar(resp)
             render_sources_expander(resp.data_sources)
@@ -148,7 +149,7 @@ if prompt_to_execute:
     # > Append user message
     st.session_state.messages.append({"role": "user", "content": prompt_to_execute})
     with st.chat_message("user"):
-        st.markdown(prompt_to_execute)
+        st.markdown(escape_dollar_signs(prompt_to_execute))
 
     # > Execute query through persistent worker
     with st.chat_message("assistant"):
@@ -166,7 +167,7 @@ if prompt_to_execute:
                     st.session_state.agent.query(prompt_to_execute)
                 )
 
-                st.markdown(response.answer)
+                st.markdown(escape_dollar_signs(response.answer))
                 st.divider()
                 render_metadata_bar(response)
                 render_sources_expander(response.data_sources)

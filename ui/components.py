@@ -1,7 +1,17 @@
+import re
 from typing import Any
 import streamlit as st
 
 from agent.response import AgentResponse, DataSourceRecord
+
+
+def escape_dollar_signs(text: str) -> str:
+    """Escapes unescaped dollar signs with backslashes so Streamlit's Markdown parser
+    does not misinterpret currency figures (e.g. $9.5B vs. $6.0B) as LaTeX math syntax.
+    """
+    if not text:
+        return text
+    return re.sub(r"(?<!\\)\$", r"\$", text)
 
 
 def render_metadata_bar(response: AgentResponse) -> None:
@@ -55,8 +65,8 @@ def render_sources_expander(data_sources: list[DataSourceRecord]) -> None:
         ]
         for src in data_sources:
             company = src.company or "N/A"
-            metric = src.metric_or_event.replace("|", "-")
-            filing = src.source.replace("|", "-")
+            metric = escape_dollar_signs(src.metric_or_event.replace("|", "-"))
+            filing = escape_dollar_signs(src.source.replace("|", "-"))
             url = src.source_url
             link_md = f"[Open Source ↗]({url})" if url else "N/A"
             table_rows.append(f"| **{company}** | {metric} | {filing} | {link_md} |")

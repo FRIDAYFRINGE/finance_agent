@@ -28,6 +28,7 @@ from agent.core import FinancialAgent
 from agent.response import AgentResponse, DataSourceRecord, DEFAULT_DISCLAIMER
 from ui.async_runner import AsyncWorker
 from ui.components import (
+    escape_dollar_signs,
     get_sample_prompts_for_config,
     render_disclaimer,
     render_metadata_bar,
@@ -99,7 +100,18 @@ def run_ui_tests():
         render_sources_expander(test_response.data_sources)
         render_sources_expander([])  # Empty sources test
         render_disclaimer(test_response.disclaimer)
+
+        # Verify LaTeX corruption guard for dollar amounts
+        raw_currency = "$9.5B vs. $6.0B with \\$3.5B FCF"
+        escaped_currency = escape_dollar_signs(raw_currency)
+        assert escaped_currency == r"\$9.5B vs. \$6.0B with \$3.5B FCF", (
+            f"Expected properly escaped currency, got: {escaped_currency}"
+        )
+        assert escape_dollar_signs("") == ""
+        assert escape_dollar_signs("No dollars") == "No dollars"
+
         print("  ✅ All presentation helpers rendered valid UI structures without exceptions.")
+        print("  ✅ LaTeX math auto-rendering guard verified: dollar amounts safely escaped.")
         passed += 1
     except Exception as e:
         print(f"  ❌ Presentation helper failed: {e}")
